@@ -1,6 +1,5 @@
 package com.autumnutil.ditio.service;
 
-import com.autumnutil.ditio.dto.DtoMapper;
 import com.autumnutil.ditio.dto.DtoModel;
 import com.autumnutil.ditio.util.ReflectionUtil;
 import org.modelmapper.ModelMapper;
@@ -21,45 +20,6 @@ public class DtoMapperService {
     public DtoMapperService() {
         this.modelMapper = new ModelMapper();
     }
-
-    /*public <T, U> Object map(final U object, final Class<T> type) {
-        if (object instanceof Collection) {
-            List<Object> list = new ArrayList<>();
-            ((Collection<?>) object).forEach(o -> list.add(map(o, type)));
-            return list;
-        } else {
-            try {
-                Object returnValue = type.newInstance();
-                List<Method> setters = ReflectionUtil.getSetters(type);
-                for (Method method : setters) {
-                    Optional<Method> getterOptional = ReflectionUtil.getGetter(object.getClass(), method.getName().substring(3));
-                    if (getterOptional.isPresent()) {
-                        try {
-                            Field declaredField = type.getDeclaredField(extractFieldName(method.getName()));
-                            if (declaredField.isAnnotationPresent(DtoMapper.class)) {
-                                if (Collection.class.isAssignableFrom(declaredField.getType())) {
-                                    Class c = Class.forName(((ParameterizedType) method.getGenericParameterTypes()[0]).getActualTypeArguments()[0].getTypeName());
-                                    method.invoke(returnValue, map(getterOptional.get().invoke(object), c)
-                                    );
-                                } else {
-                                    method.invoke(returnValue, map(getterOptional.get().invoke(object), method.getParameterTypes()[0]));
-                                }
-
-                            } else if (method.getParameterTypes()[0].equals(getterOptional.get().getReturnType())) {
-                                method.invoke(returnValue, getterOptional.get().invoke(object));
-                            }
-                        } catch (IllegalAccessException | InvocationTargetException | NoSuchFieldException | ClassNotFoundException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-                return returnValue;
-            } catch (InstantiationException | IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            return modelMapper.map(object, type);
-        }
-    }*/
 
     public <T, U> Object map(final U object, final Class<T> type) {
         if (object instanceof Collection) {

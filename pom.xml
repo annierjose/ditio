@@ -7,13 +7,33 @@
     <groupId>com.autumnutil</groupId>
     <artifactId>ditio</artifactId>
     <version>0.1.0</version>
+    <packaging>jar</packaging>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+    <name>DTO util</name>
+    <description>Utils based on the spring project. This is a library for mapping DTO</description>
+    <url>https://github.com/annierjose/ditio</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Annier Jose Alfonso Hernandez</name>
+            <email>annierjose87@gmail.com</email>
+            <organization>https://github.com/annierjose/</organization>
+            <organizationUrl>https://github.com/annierjose/</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/annierjose/ditio.git</connection>
+        <developerConnection>scm:git:ssh://github.com:annierjose/ditio.git</developerConnection>
+        <url>https://github.com/annierjose/ditio/tree/master</url>
+    </scm>
 
     <properties>
         <java.version>1.8</java.version>
@@ -46,5 +66,18 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
