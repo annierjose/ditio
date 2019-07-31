@@ -13,14 +13,29 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The type Dto mapper service.
+ */
 public class DtoMapperService {
 
     private ModelMapper modelMapper;
 
+    /**
+     * Instantiates a new Dto mapper service.
+     */
     public DtoMapperService() {
         this.modelMapper = new ModelMapper();
     }
 
+    /**
+     * Map object.
+     *
+     * @param <T>    the type parameter
+     * @param <U>    the type parameter
+     * @param object the object
+     * @param type   the type
+     * @return the object
+     */
     public <T, U> Object map(final U object, final Class<T> type) {
         if (object instanceof Collection) {
             List<Object> list = new ArrayList<>();
