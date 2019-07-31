@@ -43,7 +43,7 @@
     <scm>
         <connection>scm:git:git://github.com/annierjose/ditio.git</connection>
         <developerConnection>scm:git:ssh://github.com:annierjose/ditio.git</developerConnection>
-        <url>https://github.com/annierjose/ditio/tree/master</url>
+        <url>https://github.com/annierjose/ditio</url>
     </scm>
 
     <properties>
@@ -141,5 +141,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
